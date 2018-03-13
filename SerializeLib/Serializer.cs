@@ -50,7 +50,7 @@ namespace VersionLib
             if (File.Exists(filePath))
             {
                 try
-                {
+                { 
                     Stream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.None);
                     IFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
                     VersionInfomation versionInfomation = (VersionInfomation)formatter.Deserialize(stream);
