@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 namespace VersionLib
 {
     [Serializable]
-    public class VersionInfomation
+    public class VersionInformation
     {
         public object AppID { get; set; }
         public object DeviceID { get; set; }
@@ -19,10 +20,12 @@ namespace VersionLib
         public object Key { get; set; }
         public object Notes { get; set; }
         public object Data { get; set; }
+        public object DataType { get; set; }
+        public byte[] ByteArrayData { get; set; }
 
         private static object StaticReleaseDate;
 
-        public VersionInfomation()
+        public VersionInformation()
         {
             ReleaseDate = StaticReleaseDate;
         }
@@ -32,7 +35,7 @@ namespace VersionLib
         /// </summary>
         /// <param name="AutomaticallySetReleaseDate"></param>
         /// <param name="AutomaticallyCreateIniFile"></param>
-        static VersionInfomation()
+        static VersionInformation()
         {
             if (StaticConstructionController.AutomaticallyCreateIniFile&& StaticConstructionController.AutomaticallySetReleaseDate)
             {
@@ -53,23 +56,10 @@ namespace VersionLib
                 }
                 else
                 {
-                    iniFileOperator.IniWriteValue("Config", "APP_ID", "0x0C");
                     iniFileOperator.IniWriteValue("Release", "Date", DateTime.Now.ToLongDateString());
+                    StaticReleaseDate = DateTime.Now.ToLongDateString();
                 }
                 Debug.WriteLine("the original struction function has been execute");
-            }
-            else if (StaticConstructionController.AutomaticallySetReleaseDate)
-            {
-
-                
-            }
-            else if (StaticConstructionController.AutomaticallyCreateIniFile)
-            {
-
-            }
-            else
-            {
-
             }
             if(StaticConstructionController.FunctionEnabled)
             {
@@ -89,9 +79,6 @@ namespace VersionLib
         }
         public static bool AutomaticallySetReleaseDate { get; set; }
         public static bool AutomaticallyCreateIniFile { get; set; }
-
         public static Action CustomConstruction { get; set; }
-        public static Action AnotherConstructionAction { get; set; }
     }
-
 }

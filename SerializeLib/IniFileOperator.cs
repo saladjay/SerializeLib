@@ -12,7 +12,6 @@ namespace VersionLib
     {
         public string FileName { get; private set; }
 
-
         // 读写INI文件相关。
         [DllImport("kernel32.dll")]
         private static extern int GetPrivateProfileInt(

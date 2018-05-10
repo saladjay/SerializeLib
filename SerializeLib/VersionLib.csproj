@@ -43,7 +43,7 @@
     <Compile Include="IniFileOperator.cs" />
     <Compile Include="MyDirectoryHelper.cs" />
     <Compile Include="Serializer.cs" />
-    <Compile Include="VersionInfomation.cs" />
+    <Compile Include="VersionInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
