@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace VersionLib
 {
-    public class MyDirectoryHelper
+    internal class MyDirectoryHelper
     {
         public static readonly string _MainDirectory = AppDomain.CurrentDomain.BaseDirectory;
         public static string CreateDir(string subdir)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -85,6 +86,42 @@ namespace VersionLib
         {
             string filePath = new StringBuilder(fileDirectory).Append(fileName).Append(".bin").ToString();
             return ReadFromBinary(filePath);
+        }
+
+        public static object ReadBinFile(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                //try
+                //{
+                    Stream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.None);
+                    IFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                    object _object = formatter.Deserialize(stream);
+                    stream.Close();
+                    return _object;
+                //}
+                //catch (Exception e)
+                //{
+                //    Debug.WriteLine(e.Message);
+                //    return null;
+                //}
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static void SaveBinFile(ISerializable serializableFile,string filePath)
+        {
+            if (serializableFile==null)
+            {
+                return;
+            }
+            IFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+            Stream stream = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Write, FileShare.None);
+            formatter.Serialize(stream, serializableFile);
+            stream.Close();
         }
     }
 }

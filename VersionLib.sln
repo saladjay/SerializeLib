@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VersionLib", "SerializeLib\VersionLib.csproj", "{4BEA0913-54CA-4B9A-BBA8-B96482FDA2AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWindow", "TextWindow\TestWindow.csproj", "{1C972474-93AC-4926-AB1E-AF0A4E10AD7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bufferProtocol", "bufferProtocol\bufferProtocol.csproj", "{F34A5C97-1AA2-4CD8-94AD-E405D8EDA418}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{4BEA0913-54CA-4B9A-BBA8-B96482FDA2AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BEA0913-54CA-4B9A-BBA8-B96482FDA2AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BEA0913-54CA-4B9A-BBA8-B96482FDA2AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C972474-93AC-4926-AB1E-AF0A4E10AD7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C972474-93AC-4926-AB1E-AF0A4E10AD7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C972474-93AC-4926-AB1E-AF0A4E10AD7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C972474-93AC-4926-AB1E-AF0A4E10AD7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F34A5C97-1AA2-4CD8-94AD-E405D8EDA418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F34A5C97-1AA2-4CD8-94AD-E405D8EDA418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F34A5C97-1AA2-4CD8-94AD-E405D8EDA418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F34A5C97-1AA2-4CD8-94AD-E405D8EDA418}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
