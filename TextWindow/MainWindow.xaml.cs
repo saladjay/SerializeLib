@@ -16,7 +16,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using VersionLib;
-using SerializeLib;
 using System.Reflection;
 using System.Collections;
 using TextWindow;

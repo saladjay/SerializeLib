@@ -21,13 +21,13 @@ namespace VersionLib
         {
             //try
             //{
-                if(filePath==null)
-                    filePath= MyDirectoryHelper.CreateDir("VersionInfo") + "Config.bin";
-                IFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-                Stream stream = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Write, FileShare.None);
-                formatter.Serialize(stream, versionInformation);
-                stream.Close();
-                return true;
+            if (filePath == null)
+                filePath = AppDomain.CurrentDomain.BaseDirectory + "Config.bin";
+            IFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+            Stream stream = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Write, FileShare.None);
+            formatter.Serialize(stream, versionInformation);
+            stream.Close();
+            return true;
             //}
             //catch (Exception)
             //{
@@ -55,7 +55,7 @@ namespace VersionLib
         public static VersionInformation ReadFromBinary(string filePath = null)
         {
             if (filePath == null)
-                filePath = MyDirectoryHelper.CreateDir("VersionInfo") + "Config.bin";
+                filePath = AppDomain.CurrentDomain.BaseDirectory + "Config.bin";
             if (File.Exists(filePath))
             {
                 try
@@ -92,19 +92,11 @@ namespace VersionLib
         {
             if (File.Exists(filePath))
             {
-                //try
-                //{
-                    Stream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.None);
-                    IFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-                    object _object = formatter.Deserialize(stream);
-                    stream.Close();
-                    return _object;
-                //}
-                //catch (Exception e)
-                //{
-                //    Debug.WriteLine(e.Message);
-                //    return null;
-                //}
+                Stream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.None);
+                IFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                object _object = formatter.Deserialize(stream);
+                stream.Close();
+                return _object;
             }
             else
             {
