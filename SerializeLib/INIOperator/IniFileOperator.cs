@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VersionLib
+namespace VersionLib.INIOperator
 {
     public class IniFileOperator
     {
@@ -96,7 +96,6 @@ namespace VersionLib
         /// <param name="Ival">写入值</param>
         public void WriteInt(string section, string name, int Ival)
         {
-
             WritePrivateProfileString(section, name, Ival.ToString(), this.FileName);
         }
 

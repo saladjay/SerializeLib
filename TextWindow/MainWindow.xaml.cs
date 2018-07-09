@@ -19,6 +19,7 @@ using VersionLib;
 using System.Reflection;
 using System.Collections;
 using TextWindow;
+using VersionLib.INIOperator;
 
 namespace TestWindow
 {
@@ -61,17 +62,23 @@ namespace TestWindow
             //    Debug.WriteLine("===============================================");
             //}
 
-            string path3 = AppDomain.CurrentDomain.BaseDirectory + "class3.bin";
-            Class3 class3 = new Class3() { str1 = "str1" };
-            Serializer.SaveBinFile(class3, path3);
-            if (Serializer.ReadBinFile(path3) is Class3 class32)
-            {
-                Debug.WriteLine(class32.str1);
-            }
-            else
-            {
-                Debug.WriteLine(Serializer.ReadBinFile(path3)?.GetType());
-            }
+            //string path3 = AppDomain.CurrentDomain.BaseDirectory + "class3.bin";
+            //Class3 class3 = new Class3() { str1 = "str1" };
+            //Serializer.SaveBinFile(class3, path3);
+            //if (Serializer.ReadBinFile(path3) is Class3 class32)
+            //{
+            //    Debug.WriteLine(class32.str1);
+            //}
+            //else
+            //{
+            //    Debug.WriteLine(Serializer.ReadBinFile(path3)?.GetType());
+            //}
+            string filename = AppDomain.CurrentDomain.BaseDirectory + "132.ini";
+            IniFileOperator iniFileOperator = new IniFileOperator(filename);
+            iniFileOperator.WriteString("first", "xiaoming", "male");
+            iniFileOperator.WriteString("first", "xiaohong", "female");
+            iniFileOperator.WriteInt("second", "xiaoming", 13);
+            iniFileOperator.WriteInt("second", "xiaoming", 15);
         }
     }
     [Serializable]

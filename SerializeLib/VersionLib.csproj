@@ -40,11 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IniFileOperator.cs" />
+    <Compile Include="INIOperator\IniFileOperator.cs" />
+    <Compile Include="INIOperator\INITag.cs" />
     <Compile Include="MyDirectoryHelper.cs" />
     <Compile Include="Serializer.cs" />
     <Compile Include="VersionInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XmlOperator\XmlTag.cs" />
+    <Compile Include="XmlOperator\XModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

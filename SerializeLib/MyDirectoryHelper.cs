@@ -9,8 +9,8 @@ namespace VersionLib
 {
     internal class MyDirectoryHelper
     {
-        public static readonly string _MainDirectory = AppDomain.CurrentDomain.BaseDirectory;
-        public static string CreateDir(string subdir)
+        internal static readonly string _MainDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        internal static string CreateDir(string subdir)
         {
             StringBuilder stringBuilder = new StringBuilder(_MainDirectory);
             string path = stringBuilder.Append(subdir).ToString();

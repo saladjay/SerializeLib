@@ -13,5 +13,11 @@ namespace TestWindow
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            MainWindow window = new MainWindow();
+            window.ShowDialog();
+            base.OnStartup(e);
+        }
     }
 }
